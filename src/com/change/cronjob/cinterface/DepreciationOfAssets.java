@@ -48,6 +48,7 @@ public class DepreciationOfAssets extends BaseCronJob {
 			Integer yzjqsy = ufZctz.getYzjqsy();
 			try {
 				yzjqsy = DateUtils.getDiffMonth(ufZctz.getKssyrq(),DateUtils.getNowStr("yyyy-MM-dd"));
+				//yzjqsy = yzjqsy -1;
 			} catch (ParseException e) {
 				e.printStackTrace();
 				log.info("计算月份差值出错  -> " + e.toString());
@@ -58,8 +59,10 @@ public class DepreciationOfAssets extends BaseCronJob {
 			//资产净值：不含税-累计折旧
 			float zcjz = ufZctz.getZcyzbhs() - zcljzj;
 			
-			String update_sql = "update uf_zctz set yzjje = " + yzjje + ",yzjqsy = "+ yzjqsy +
-					",zcljzj = " + zcljzj +",zcjz = " + zcjz + " where id = " + ufZctz.getId();
+//			String update_sql = "update uf_zctz set yzjje = " + yzjje + ",yzjqsy = "+ yzjqsy +
+//					",zcljzj = " + zcljzj +",zcjz = " + zcjz + " where id = " + ufZctz.getId();
+			String update_sql = "update uf_zctz set yzjqsy = "+ yzjqsy +
+					",zcljzj = " + zcljzj +",zcjz = " + zcjz + ",ysyqs = " + yzjqsy + " where id = " + ufZctz.getId();
 			log.info("更新资产台账表sql -> " + update_sql);
 			update_rs.execute(update_sql);
 			

@@ -78,7 +78,7 @@
 						            	count += parseFloat(value[i].month1);
 					            	}
 					            }
-					            return count; 
+					            return count.toFixed(2); 
 					        }
 	        			},
 	                    {
@@ -92,7 +92,7 @@
 						            	count += parseFloat(value[i].month2);
 					            	}
 					            }
-					            return count; 
+					            return count.toFixed(2); 
 					        }
 	        			},
 	                    {
@@ -106,7 +106,7 @@
 						            	count += parseFloat(value[i].month3);
 					            	}
 					            }
-					            return count; 
+					            return count.toFixed(2); 
 					        }
 	        			},
 	                    {
@@ -120,7 +120,7 @@
 						            	count += parseFloat(value[i].month4);
 					            	}
 					            }
-					            return count; 
+					            return count.toFixed(2); 
 					        }
 	        			},
 	                    {
@@ -134,7 +134,7 @@
 						            	count += parseFloat(value[i].month5);
 					            	}
 					            }
-					            return count; 
+					            return count.toFixed(2); 
 					        }
 	        			},
 	                    {
@@ -148,7 +148,7 @@
 						            	count += parseFloat(value[i].month6);
 					            	}
 					            }
-					            return count; 
+					            return count.toFixed(2); 
 					        }
 	        			},
 	                    {
@@ -162,7 +162,7 @@
 						            	count += parseFloat(value[i].month7);
 					            	}
 					            }
-					            return count; 
+					            return count.toFixed(2); 
 					        }
 	        			},
 	                    {
@@ -176,7 +176,7 @@
 						            	count += parseFloat(value[i].month8);
 					            	}
 					            }
-					            return count; 
+					            return count.toFixed(2); 
 					        }
 	        			},
 	                    {
@@ -190,7 +190,7 @@
 						            	count += parseFloat(value[i].month9);
 					            	}
 					            }
-					            return count; 
+					            return count.toFixed(2); 
 					        }
 	        			},
 	                    {
@@ -204,7 +204,7 @@
 						            	count += parseFloat(value[i].month10);
 					            	}
 					            }
-					            return count;
+					            return count.toFixed(2);
 					        }
 	        			},
 	                    {
@@ -218,7 +218,7 @@
 						            	count += parseFloat(value[i].month11);
 					            	}
 					            }
-					            return count; 
+					            return count.toFixed(2); 
 					        }
 	        			},
 	                    {
@@ -232,7 +232,7 @@
 						            	count += parseFloat(value[i].month12);
 					            	}
 					            }
-					            return count; 
+					            return count.toFixed(2); 
 					        }
 	        			}
 	        		],
@@ -253,9 +253,9 @@
 	
 	function setDefaultValue(value, row, index) {
 		if (value) {
-			return value;
+			return value.toFixed(2);
 		} else {
-			return 0;
+			return "0.00";
 	    }
 		
 	}
