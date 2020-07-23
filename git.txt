@@ -1,22 +1,23 @@
-1¡¢ÃüÁî¿ÉÒÔ½«xxÎÄ¼þÌí¼Óµ½ÔÝ´æÇø
-	git add xx.x(ÎÄ¼þÃû)
 
-2¡¢Ò»´ÎÌí¼ÓËùÓÐ¸Ä±äµÄÎÄ¼þ
+1ã€å‘½ä»¤å¯ä»¥å°†xxæ–‡ä»¶æ·»åŠ åˆ°æš‚å­˜åŒº
+	git add xx.x(æ–‡ä»¶å)
+
+2ã€ä¸€æ¬¡æ·»åŠ æ‰€æœ‰æ”¹å˜çš„æ–‡ä»¶
 	git add -A .
 	
-3¡¢±íÊ¾Ìí¼ÓËùÓÐÄÚÈÝ
+3ã€è¡¨ç¤ºæ·»åŠ æ‰€æœ‰å†…å®¹
 	git add -A
 	
-4¡¢±íÊ¾Ìí¼ÓÐÂÎÄ¼þºÍ±à¼­¹ýµÄÎÄ¼þ²»°üÀ¨É¾³ýµÄÎÄ¼þ
+4ã€è¡¨ç¤ºæ·»åŠ æ–°æ–‡ä»¶å’Œç¼–è¾‘è¿‡çš„æ–‡ä»¶ä¸åŒ…æ‹¬åˆ é™¤çš„æ–‡ä»¶
 	git add .
 	
 
-5¡¢±íÊ¾Ìí¼Ó±à¼­»òÕßÉ¾³ýµÄÎÄ¼þ£¬²»°üÀ¨ÐÂÌí¼ÓµÄÎÄ¼þ
+5ã€è¡¨ç¤ºæ·»åŠ ç¼–è¾‘æˆ–è€…åˆ é™¤çš„æ–‡ä»¶ï¼Œä¸åŒ…æ‹¬æ–°æ·»åŠ çš„æ–‡ä»¶
 	git add -u
 	
 	
-6¡¢°ÑÎÄ¼þcommitµ½±¾µØ²Ö¿â
+6ã€æŠŠæ–‡ä»¶commitåˆ°æœ¬åœ°ä»“åº“
 	git commit -m "push to gitlab init"
 
-7¡¢°ÑÎÄ¼þpushµ½Ô¶³Ì²Ö¿â
+7ã€æŠŠæ–‡ä»¶pushåˆ°è¿œç¨‹ä»“åº“
 	git push -u origin master
