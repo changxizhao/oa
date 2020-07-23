@@ -5,7 +5,9 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
 import com.change.workflow.action.entities.AssetsVO;
+
 import weaver.conn.RecordSet;
 import weaver.formmode.setup.ModeRightInfo;
 import weaver.general.BaseBean;
@@ -78,6 +80,20 @@ public class AssetsDataRightRebuildAction extends BaseBean implements Action {
 		}else {
 			log.info("资产编号获取为空");
 		}
+		
+		// 清除流程权限
+		String getFormmodeidSql = "select distinct formmodeid from uf_zctz";
+		RecordSet getFormmodeidRs = new RecordSet();
+		getFormmodeidRs.execute(getFormmodeidSql);
+		if(getFormmodeidRs.next()) {
+			log.info("-------------------清除流程权限开始-------------------");
+			String formmodeid = Util.null2String(getFormmodeidRs.getString("formmodeid"));
+			RecordSet deleteWorkflowDataRightRs = new RecordSet();
+			String deleteWorkflowDataRightSql = "delete from modedatashare_" + formmodeid + " where  isdefault = 0  and   requestid is not null";
+			deleteWorkflowDataRightRs.execute(deleteWorkflowDataRightSql);
+			log.info("-------------------清除流程权限结束-------------------");
+		}
+		
 		String endTime = format.format(new Date());
 		log.info("-------------------资产台账数据权限重构结束" + endTime + "-------------------");
 		return null;

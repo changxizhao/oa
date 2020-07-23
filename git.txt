@@ -13,3 +13,10 @@
 
 5、表示添加编辑或者删除的文件，不包括新添加的文件
 	git add -u
+	
+	
+6、把文件commit到本地仓库
+	git commit -m "push to gitlab init"
+
+7、把文件push到远程仓库
+	git push -u origin master
