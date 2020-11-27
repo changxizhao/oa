@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//WebContent/WEB-INF/prop/AssetsInventory.properties=UTF-8
 encoding//WebContent/WEB-INF/prop/AssetsModelId.properties=UTF-8
 encoding//src/com/change/report/util/ExportUtil.java=UTF-8
 encoding/git.txt=UTF-8

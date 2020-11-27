@@ -10,18 +10,17 @@ import com.change.workflow.action.entities.AssetsVO;
 
 import weaver.conn.RecordSet;
 import weaver.formmode.setup.ModeRightInfo;
-import weaver.general.BaseBean;
 import weaver.general.Util;
 import weaver.integration.logging.Logger;
 import weaver.integration.logging.LoggerFactory;
-import weaver.interfaces.workflow.action.Action;
+import weaver.interfaces.workflow.action.BaseAction;
 import weaver.soa.workflow.request.RequestInfo;
 
 /**
  * 资产台账转建模数据权限重构
  * @author changxizhao
  */
-public class AssetsDataRightRebuildAction extends BaseBean implements Action {
+public class AssetsDataRightRebuildAction extends BaseAction {
 
 	private Logger log = LoggerFactory.getLogger(AssetsDataRightRebuildAction.class);
 	
@@ -51,6 +50,7 @@ public class AssetsDataRightRebuildAction extends BaseBean implements Action {
 				zcbhs += "'" + zcbh + "',";
 			}
 		}
+		
 		if(zcbhs.length() > 0) {
 			zcbhs = zcbhs.substring(0, zcbhs.length() - 1); // 把资产编号整理成逗号隔开的字符串
 			log.info("资产编号 = " + zcbhs);
@@ -79,19 +79,6 @@ public class AssetsDataRightRebuildAction extends BaseBean implements Action {
 			
 		}else {
 			log.info("资产编号获取为空");
-		}
-		
-		// 清除流程权限
-		String getFormmodeidSql = "select distinct formmodeid from uf_zctz";
-		RecordSet getFormmodeidRs = new RecordSet();
-		getFormmodeidRs.execute(getFormmodeidSql);
-		if(getFormmodeidRs.next()) {
-			log.info("-------------------清除流程权限开始-------------------");
-			String formmodeid = Util.null2String(getFormmodeidRs.getString("formmodeid"));
-			RecordSet deleteWorkflowDataRightRs = new RecordSet();
-			String deleteWorkflowDataRightSql = "delete from modedatashare_" + formmodeid + " where  isdefault = 0  and   requestid is not null";
-			deleteWorkflowDataRightRs.execute(deleteWorkflowDataRightSql);
-			log.info("-------------------清除流程权限结束-------------------");
 		}
 		
 		String endTime = format.format(new Date());
